@@ -1,39 +1,4 @@
-// --- YOUTUBE BACKGROUND API LOGIC ---
-const tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-const firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-let bgPlayer;
-window.onYouTubeIframeAPIReady = function() {
-    bgPlayer = new YT.Player('youtube-bg-player', {
-        videoId: 'abRSNK1i7tk', // Palau Ocean Paradise background
-        width: '100%',
-        height: '100%',
-        playerVars: {
-            'autoplay': 1,
-            'controls': 0,
-            'mute': 1,
-            'playsinline': 1,
-            'rel': 0,
-            'modestbranding': 1,
-            'disablekb': 1,
-            'start': 780
-        },
-        events: {
-            'onReady': (event) => {
-                event.target.playVideo();
-            },
-            'onStateChange': (event) => {
-                if (event.data === YT.PlayerState.ENDED) {
-                    event.target.playVideo();
-                }
-            }
-        }
-    });
-};
-
-// --- EXISTING CARD RENDER LOGIC BELOW ---
+// --- CARD RENDER LOGIC ---
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('marine-container');
 

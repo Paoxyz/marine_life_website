@@ -9,12 +9,19 @@
 </head>
 <body class="min-h-screen text-gray-100 font-sans overflow-x-hidden antialiased">
     
- <div class="fixed inset-0 z-[-2] overflow-hidden bg-black pointer-events-none">
-    <div class="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 scale-[1.3] pointer-events-none">
-        <div id="youtube-bg-player"></div>
+    <!-- Self-hosted Ocean Video Background (no YouTube branding/controls) -->
+    <div class="fixed inset-0 z-[-2] overflow-hidden bg-black pointer-events-none">
+        <video
+            class="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 scale-[1.3] object-cover pointer-events-none"
+            src="assets/videos/ocean-bg.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            disablepictureinpicture
+            disableremoteplayback
+        ></video>
     </div>
-    <div class="absolute inset-0 z-10 pointer-events-auto"></div>
-</div>
 
     <!-- Charcoal overlay to tone down bright scenes and keep text readable -->
     <div class="fixed inset-0 z-[-1] bg-[#1c1d21]/30"></div>
